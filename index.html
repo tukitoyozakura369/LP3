@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>陰陽師の占い 六壬神課｜月と夜桜🌙</title>
+<meta name="description" content="生年月日をうかがいません。ご相談をいただいた、その瞬間で式を立てる占いです。復縁・音信不通・お相手の本音。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#070e1a;
+  --night:#0d1b2e;
+  --night-2:#132540;
+  --gold:#d4af6a;
+  --gold-dim:#8a7340;
+  --sakura:#e8a5b8;
+  --paper:#f2eee6;
+  --paper-dim:#b9b3a6;
+  --mincho:"Shippori Mincho B1",serif;
+  --gothic:"Zen Kaku Gothic New",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--gothic);
+  font-weight:400;
+  line-height:2.05;
+  font-size:15.5px;
+  letter-spacing:.035em;
+  overflow-x:hidden;
+}
+.wrap{max-width:620px;margin:0 auto;padding:0 26px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding:64px 0 76px;
+  background:
+    radial-gradient(120% 70% at 50% 0%, var(--night-2) 0%, var(--night) 45%, var(--ink) 100%);
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
+}
+.petal{position:absolute;fill:var(--sakura);opacity:.07;pointer-events:none}
+
+.brandmark{
+  text-align:center;font-family:var(--mincho);font-size:13px;
+  letter-spacing:.42em;color:var(--gold);margin-bottom:38px;text-indent:.42em;
+}
+
+/* ---------- shikiban ---------- */
+.shikiban{width:262px;height:262px;margin:0 auto 34px;display:block}
+.ring-fixed text{font-family:var(--mincho);font-size:13px;fill:var(--paper-dim)}
+.ring-turn text{font-family:var(--mincho);font-size:15px;fill:var(--gold);font-weight:600}
+.ring-turn{transform-origin:130px 130px;transition:transform 2600ms cubic-bezier(.16,.9,.2,1)}
+.disc-edge{fill:none;stroke:var(--gold-dim);stroke-width:.6;opacity:.55}
+.disc-inner{fill:rgba(19,37,64,.72);stroke:var(--gold-dim);stroke-width:.6}
+.moon{fill:var(--gold);opacity:.92}
+.spoke{stroke:var(--gold-dim);stroke-width:.4;opacity:.3}
+
+.stamp{
+  text-align:center;font-family:var(--mincho);font-size:12.5px;
+  color:var(--gold-dim);letter-spacing:.16em;margin-bottom:30px;
+}
+.stamp b{color:var(--gold);font-weight:600}
+
+h1{
+  font-family:var(--mincho);font-weight:800;
+  font-size:clamp(29px,8.4vw,38px);line-height:1.62;
+  text-align:center;letter-spacing:.05em;
+}
+h1 .thin{display:block;font-size:.56em;font-weight:400;color:var(--gold);
+  letter-spacing:.2em;margin-bottom:16px}
+.lede{
+  margin-top:26px;text-align:center;font-size:14.5px;color:var(--paper-dim);
+  line-height:2.15;
+}
+
+/* ---------- sections ---------- */
+section{padding:66px 0}
+.alt{background:linear-gradient(180deg,rgba(19,37,64,.5),rgba(19,37,64,.16))}
+h2{
+  font-family:var(--mincho);font-weight:600;font-size:22px;line-height:1.75;
+  letter-spacing:.06em;margin-bottom:30px;text-align:center;
+}
+h2 .eyebrow{
+  display:block;font-family:var(--gothic);font-size:11px;font-weight:500;
+  letter-spacing:.34em;color:var(--gold);margin-bottom:14px;text-indent:.34em;
+}
+p+p{margin-top:1.4em}
+.center{text-align:center}
+.gold{color:var(--gold)}
+.sakura{color:var(--sakura)}
+
+.rule{width:1px;height:46px;margin:0 auto;
+  background:linear-gradient(180deg,var(--gold-dim),transparent)}
+
+/* ---------- worry list ---------- */
+.worry{list-style:none;margin:0 auto;max-width:430px}
+.worry li{
+  font-family:var(--mincho);font-size:16.5px;line-height:1.95;
+  padding:17px 0 17px 30px;position:relative;
+  border-bottom:1px solid rgba(212,175,106,.16);
+}
+.worry li:first-child{border-top:1px solid rgba(212,175,106,.16)}
+.worry li::before{
+  content:"";position:absolute;left:6px;top:calc(50% - 3px);
+  width:6px;height:6px;border-radius:50%;background:var(--sakura);opacity:.7;
+}
+
+/* ---------- pull ---------- */
+.pull{
+  font-family:var(--mincho);font-size:20px;line-height:2;text-align:center;
+  color:var(--gold);letter-spacing:.06em;margin:8px 0;
+}
+
+/* ---------- know list ---------- */
+.know{list-style:none;max-width:440px;margin:0 auto}
+.know li{
+  padding:20px 22px;margin-bottom:12px;
+  background:rgba(19,37,64,.55);
+  border-left:2px solid var(--gold);
+  font-size:15px;line-height:1.95;
+}
+.know b{display:block;font-family:var(--mincho);font-size:17px;
+  color:var(--paper);margin-bottom:5px;font-weight:600}
+
+/* ---------- sample ---------- */
+.sample{
+  background:rgba(242,238,230,.045);
+  border:1px solid rgba(212,175,106,.22);
+  padding:30px 26px;font-size:14.5px;line-height:2.2;
+}
+.sample .cap{
+  font-family:var(--mincho);font-size:11.5px;letter-spacing:.2em;
+  color:var(--gold);margin-bottom:18px;text-align:center;
+}
+.sample .dots{text-align:center;color:var(--gold-dim);letter-spacing:.6em;margin-top:14px}
+
+/* ---------- plans ---------- */
+.plan{
+  border:1px solid rgba(212,175,106,.34);
+  background:linear-gradient(180deg,rgba(19,37,64,.7),rgba(13,27,46,.45));
+  padding:32px 26px;margin-bottom:22px;position:relative;
+}
+.plan .name{
+  font-family:var(--mincho);font-size:25px;font-weight:600;
+  letter-spacing:.1em;text-align:center;color:var(--gold);
+}
+.plan .yomi{
+  text-align:center;font-size:11px;letter-spacing:.28em;
+  color:var(--paper-dim);margin-top:8px;text-indent:.28em;
+}
+.plan .price{
+  text-align:center;font-family:var(--mincho);font-size:27px;
+  margin:20px 0 4px;letter-spacing:.03em;
+}
+.plan .price small{font-size:13px;letter-spacing:.1em;color:var(--paper-dim)}
+.plan ul{list-style:none;margin-top:20px;border-top:1px solid rgba(212,175,106,.18);padding-top:18px}
+.plan li{padding:8px 0 8px 20px;position:relative;font-size:14.5px;line-height:1.9}
+.plan li::before{content:"◦";position:absolute;left:2px;color:var(--gold)}
+.plan .note{margin-top:16px;font-size:12.5px;color:var(--paper-dim);line-height:1.9}
+
+/* ---------- steps ---------- */
+.steps{list-style:none;max-width:440px;margin:0 auto;counter-reset:s}
+.steps li{
+  counter-increment:s;position:relative;padding:0 0 26px 46px;
+  border-left:1px solid rgba(212,175,106,.28);margin-left:12px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{
+  content:counter(s);position:absolute;left:-13px;top:-2px;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--ink);border:1px solid var(--gold);
+  color:var(--gold);font-family:var(--mincho);font-size:12px;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps b{display:block;font-family:var(--mincho);font-size:16.5px;
+  margin-bottom:4px;font-weight:600}
+.steps span{font-size:14px;color:var(--paper-dim);line-height:1.95}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid rgba(212,175,106,.16)}
+.faq details{border-bottom:1px solid rgba(212,175,106,.16)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:19px 30px 19px 26px;
+  font-family:var(--mincho);font-size:15.5px;position:relative;line-height:1.8;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"問";position:absolute;left:0;color:var(--gold);
+  font-size:11.5px;top:22px;letter-spacing:0}
+.faq summary::after{
+  content:"";position:absolute;right:6px;top:29px;width:8px;height:8px;
+  border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);
+  transform:rotate(45deg);transition:transform .25s;
+}
+.faq details[open] summary::after{transform:rotate(225deg)}
+.faq .a{padding:0 6px 22px 26px;font-size:14.5px;color:var(--paper-dim);line-height:2.05}
+
+/* ---------- cta ---------- */
+.cta{
+  background:radial-gradient(120% 90% at 50% 100%, var(--night-2), var(--ink) 70%);
+  padding:72px 0 84px;border-top:1px solid rgba(212,175,106,.28);
+}
+.btn{
+  display:block;max-width:400px;margin:26px auto 0;
+  background:linear-gradient(135deg,#e0bd7c,#c19a4f);
+  color:#0b1524;text-decoration:none;
+  font-family:var(--mincho);font-weight:800;font-size:18px;letter-spacing:.1em;
+  text-align:center;padding:21px 18px;border-radius:2px;
+  box-shadow:0 10px 30px rgba(212,175,106,.16);
+  transition:transform .2s, box-shadow .2s;
+}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);
+  box-shadow:0 14px 38px rgba(212,175,106,.26)}
+.btn small{display:block;font-family:var(--gothic);font-size:11.5px;
+  font-weight:500;letter-spacing:.14em;margin-top:7px;opacity:.72}
+.cta .after{margin-top:22px;text-align:center;font-size:13px;color:var(--paper-dim);line-height:2}
+
+footer{padding:36px 0 46px;text-align:center;font-size:11.5px;
+  color:var(--gold-dim);letter-spacing:.18em;line-height:2.2}
+
+
+.limited{
+  margin:0 auto 26px;max-width:440px;text-align:center;
+  border:1px solid var(--sakura);padding:16px 18px;
+  background:rgba(232,165,184,.06);
+}
+.limited .head{
+  font-family:var(--mincho);font-size:14px;letter-spacing:.12em;
+  color:var(--sakura);margin-bottom:6px;
+}
+.limited .sub{font-size:12.5px;color:var(--paper-dim);line-height:1.9}
+.plan .was{
+  text-align:center;font-size:13px;color:var(--paper-dim);
+  margin-top:18px;letter-spacing:.04em;
+}
+.plan .was s{opacity:.65}
+.plan .price{margin:4px 0 4px}
+.plan .price .tag{
+  display:block;font-family:var(--gothic);font-size:11px;font-weight:500;
+  letter-spacing:.2em;color:var(--sakura);margin-bottom:6px;text-indent:.2em;
+}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.reveal{opacity:0;transform:translateY(16px);
+  transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="petal" width="150" height="150" viewBox="0 0 24 24" style="top:6%;left:-30px">
+    <path d="M12 2c2.5 3 4 5.5 4 8a4 4 0 1 1-8 0c0-2.5 1.5-5 4-8z"/></svg>
+  <svg class="petal" width="110" height="110" viewBox="0 0 24 24" style="bottom:8%;right:-24px">
+    <path d="M12 2c2.5 3 4 5.5 4 8a4 4 0 1 1-8 0c0-2.5 1.5-5 4-8z"/></svg>
+
+  <div class="wrap">
+    <div class="brandmark">月と夜桜</div>
+
+    <svg class="shikiban" viewBox="0 0 260 260" role="img" aria-label="十二支の式盤">
+      <circle class="disc-edge" cx="130" cy="130" r="126"/>
+      <circle class="disc-edge" cx="130" cy="130" r="101"/>
+      <circle class="disc-inner" cx="130" cy="130" r="78"/>
+      <g class="spoke" id="spokes"></g>
+      <g class="ring-fixed" id="ringFixed"></g>
+      <g class="ring-turn"  id="ringTurn"></g>
+      <circle class="moon" cx="130" cy="130" r="19"/>
+      <circle cx="137" cy="125" r="16" fill="#0d1b2e" opacity=".95"/>
+    </svg>
+
+    <p class="stamp">ただいま <b id="nowStamp">—</b>　この瞬間の盤です</p>
+
+    <h1><span class="thin">陰陽師の占い　六壬神課</span>生年月日を、<br>うかがいません。</h1>
+
+    <p class="lede">
+      占うのは、生まれた日ではありません。<br>
+      あなたが「知りたい」と思った、その一瞬です。<br>
+      その瞬間で式を立て、お相手の心と、動くべき時期を読みます。
+    </p>
+  </div>
+</header>
+
+<section class="alt">
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">こんな夜に</span>言えないまま、<br>ひとりで抱えていませんか</h2>
+    <ul class="worry">
+      <li>既読はつくのに、返事が来ない</li>
+      <li>もう一度やり直せるのか、知りたい</li>
+      <li>待つべきなのか、動くべきなのか</li>
+      <li>あの人の本当の気持ちが分からない</li>
+      <li>誰にも相談できないまま、時間だけが過ぎていく</li>
+    </ul>
+    <p style="margin-top:32px" class="center">
+      占いに行こうとすると、必ず聞かれます。<br>
+      「お相手の生年月日は？」
+    </p>
+    <p class="center">
+      別れた方の誕生日を、いま聞けるでしょうか。<br>
+      覚えていても、もう連絡は取れませんよね。
+    </p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">六壬神課とは</span>その昔、陰陽師が<br>用いていた占いです</h2>
+    <p>
+      六壬神課（りくじんしんか）は、平安の世に陰陽師たちが使っていた占術です。
+      国の行方から、失せもの、人の心まで、あらゆることをこの盤で占っていました。
+    </p>
+    <p>
+      使うのは、円い式盤です。
+      天の盤が、地の盤の上でゆっくりと回り、<span class="gold">尋ねたその瞬間</span>で止まる。
+      止まった形をそのまま読み解いていきます。
+    </p>
+    <p class="pull">だから、生年月日が要りません。</p>
+    <p>
+      必要なのは、あなたが問いを立てた時刻だけ。
+      お名前も、お相手の情報も、何ひとつうかがわずに占えます。
+    </p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">お伝えできること</span>この盤で、<br>見えるもの</h2>
+    <ul class="know">
+      <li><b>お相手の、今のお気持ち</b>あなたのことをどう思っておられるか。今なにに心が向いているか。</li>
+      <li><b>連絡が来るとしたら、いつ頃か</b>六壬は時期がはっきり出る占いです。何月頃かまでお伝えします。</li>
+      <li><b>今は動く時か、待つ時か</b>同じ「待つ」でも、待てば近づく時と、待つほど遠くなる時があります。</li>
+      <li><b>あなたの周りに、力になる人がいるか</b>誰を頼るとよいか、誰に任せない方がよいか。</li>
+      <li><b>今日からできる、お手当て</b>流れを変えるために、今日ひとつだけできることをお渡しします。</li>
+    </ul>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">鑑定文より</span>こんなふうに、<br>お届けしています</h2>
+    <div class="sample">
+      <p class="cap">──　実際の鑑定文の一部です　──</p>
+      <p>
+        今の◯◯さんは、静かに待てるお力をお持ちの方として出ております。<br>
+        騒がず、まくし立てず、じっと堪えていらっしゃる。<br>
+        それはとても強いことです。
+      </p>
+      <p>
+        ただ同時に、この件が◯◯さんにとって重荷になっていることも出ております。<br>
+        そして今は、お気持ちがふわりと宙に浮いたような状態です。<br>
+        まだ地に足がついていない、そんなご様子と受け取りました。
+      </p>
+      <p>
+        これは責められることではありません。<br>
+        気持ちがまとまらない時期というのは、誰にでもございます。
+      </p>
+      <p class="dots">・・・</p>
+    </div>
+    <p class="center" style="margin-top:26px;font-size:14px;color:var(--paper-dim)">
+      むずかしい言葉は使いません。<br>
+      占いを知らない方が、そのまま読めるように書いております。
+    </p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">鑑定のご案内</span>ふたつの<br>お品書き</h2>
+
+    <div class="limited">
+      <div class="head">二十四時間かぎりのお値段です</div>
+      <div class="sub">
+        このご案内をお受け取りになってから二十四時間のあいだ、<br>
+        下のお値段でお受けしております。
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="name">宵桜</div>
+      <div class="yomi">よいざくら</div>
+      <div class="price"><span class="tag">24時間かぎり</span>3,980<small> 円</small></div>
+      <p class="was">通常 <s>5,000円</s></p>
+      <ul>
+        <li>ご質問ひとつ</li>
+        <li>いただいた時刻で式を立てます</li>
+        <li>お相手のお気持ち・今の流れ・時期</li>
+        <li>今日からできるお手当て</li>
+        <li>鑑定文 約1,500文字</li>
+        <li>お届けまで、三日ほど頂戴します</li>
+      </ul>
+      <p class="note">はじめての方は、こちらからどうぞ。</p>
+    </div>
+
+    <div class="plan">
+      <div class="name">夜半の桜</div>
+      <div class="yomi">よわのさくら</div>
+      <div class="price"><span class="tag">24時間かぎり</span>9,800<small> 円</small></div>
+      <p class="was">通常 <s>12,000円</s></p>
+      <ul>
+        <li>ご質問ひとつを、より深く</li>
+        <li>宵桜の内容をすべて含みます</li>
+        <li>鑑定文 約4,000文字</li>
+        <li>お手当ては十ほどお渡しします</li>
+        <li>お読みになったあとの追加のご質問を、一度おうかがいします（一週間以内）</li>
+      </ul>
+      <p class="note">深くお知りになりたい方、読んだあとに必ず聞きたいことが出てくる方に。</p>
+    </div>
+
+    <p class="center" style="font-size:13px;color:var(--paper-dim);margin-top:6px;line-height:2">
+      ご質問は、ひとつのお悩みについてお受けしております。<br>
+      六壬はひとつの問いにひとつの盤を立てる占いですので、<br>
+      別のお悩みは、あらためて立て直すことになります。
+    </p>
+
+    <p class="center" style="font-size:13.5px;color:var(--paper-dim);margin-top:24px">
+      お生まれの日と時刻が分かる方には、<br>
+      紫微斗数と合わせた鑑定もご用意しております。<br>
+      鑑定の中でご案内いたします。
+    </p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">このあとの流れ</span>あと三つで、<br>鑑定に入ります</h2>
+    <ol class="steps">
+      <li><b>お品書きをお選びください</b><span>このページを閉じてLINEにお戻りいただき、「宵桜」または「夜半の桜」とお送りください。お支払いのご案内をいたします。</span></li>
+      <li><b>ご質問をお書きください</b><span>知りたいことを、そのままの言葉で結構です。いただいた時刻が、そのまま占う時刻になります。</span></li>
+      <li><b>鑑定文をお届けします</b><span>三日ほど頂戴いたします。読んで分からないところがあれば、いつでもお尋ねください。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap reveal">
+    <h2><span class="eyebrow">よくいただくご質問</span>ご不安なことは<br>ございませんか</h2>
+    <div class="faq">
+      <details>
+        <summary>本当に、生年月日はいらないのですか</summary>
+        <div class="a">はい、まったく必要ございません。六壬神課は、ご相談をいただいた時刻だけで占う占術です。お名前もうかがっておりません。お聞きするのは、性別とご質問の内容だけです。</div>
+      </details>
+      <details>
+        <summary>相手の名前や生年月日も分からないのですが</summary>
+        <div class="a">問題ございません。お相手の情報は一切いただかずに占えます。「別れた彼」「気になっているあの人」——あなたの中で相手が定まっていれば、それで足ります。</div>
+      </details>
+      <details>
+        <summary>よくないことも、はっきり言われますか</summary>
+        <div class="a">見えたことは、隠さずお伝えいたします。ただ、突き放すことはいたしません。よくない流れが出ているときほど、ではどうすればよいか、いつまで待てばよいかを一緒にお伝えします。</div>
+      </details>
+      <details>
+        <summary>質問はひとつだけですか</summary>
+        <div class="a">はい。六壬はひとつの問いに、ひとつの盤を立てる占いです。ですのでご質問はひとつにおまとめください。夜半の桜では、お読みになったあとに出てきた疑問を、一週間以内にもう一度おうかがいしております。同じお悩みの中でのご質問でしたら、遠慮なくお寄せください。</div>
+      </details>
+      <details>
+        <summary>同じことを、また占ってもらえますか</summary>
+        <div class="a">はい。六壬はその瞬間を写す占いですので、状況が変われば盤も変わります。お相手に動きがあったとき、ご自身の気持ちが変わったときに、あらためてお立てするのがよろしいかと思います。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="center" style="font-family:var(--mincho);font-size:19px;line-height:2.1;letter-spacing:.05em">
+      迷っている今この瞬間も、<br>
+      盤の上では、ひとつの形をしています。
+    </p>
+    <a class="btn" href="https://lin.ee/9a3ryHp">
+      LINEに戻ってお申し込み
+      <small>「宵桜」または「夜半の桜」とお送りください</small>
+    </a>
+    <p class="after">
+      二十四時間かぎりのお値段は、このご案内が届いた時刻からとなります。<br>
+      どちらにするか迷われましたら、ご相談の内容だけお書きください。<br>
+      合う方をご案内いたします。
+    </p>
+  </div>
+</section>
+
+<footer>
+  月と夜桜　🌙<br>
+  紫微斗数・タロット・六壬神課
+</footer>
+
+<script>
+(function(){
+  var SHI = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
+  var R_OUT = 113, R_IN = 90, CX = 130, CY = 130;
+
+  function place(group, radius, cls){
+    var svgns = "http://www.w3.org/2000/svg";
+    for(var i=0;i<12;i++){
+      var ang = (i*30 - 90) * Math.PI/180;
+      var t = document.createElementNS(svgns,"text");
+      t.setAttribute("x", (CX + radius*Math.cos(ang)).toFixed(2));
+      t.setAttribute("y", (CY + radius*Math.sin(ang) + 5).toFixed(2));
+      t.setAttribute("text-anchor","middle");
+      t.textContent = SHI[i];
+      group.appendChild(t);
+    }
+  }
+  var fixed = document.getElementById("ringFixed");
+  var turn  = document.getElementById("ringTurn");
+  place(fixed, R_OUT);
+  place(turn,  R_IN);
+
+  var spokes = document.getElementById("spokes");
+  for(var i=0;i<12;i++){
+    var a = ((i*30) - 75) * Math.PI/180;
+    var l = document.createElementNS("http://www.w3.org/2000/svg","line");
+    l.setAttribute("x1",(CX+78*Math.cos(a)).toFixed(2));
+    l.setAttribute("y1",(CY+78*Math.sin(a)).toFixed(2));
+    l.setAttribute("x2",(CX+126*Math.cos(a)).toFixed(2));
+    l.setAttribute("y2",(CY+126*Math.sin(a)).toFixed(2));
+    spokes.appendChild(l);
+  }
+
+  // 太陽黄経から月将を求める
+  function solarLongitude(d){
+    var jd = d.getTime()/86400000 + 2440587.5;
+    var T = (jd - 2451545.0)/36525;
+    var L0 = 280.46646 + 36000.76983*T;
+    var M  = (357.52911 + 35999.05029*T) * Math.PI/180;
+    var C  = 1.914602*Math.sin(M) + 0.019993*Math.sin(2*M) + 0.000289*Math.sin(3*M);
+    return ((L0 + C) % 360 + 360) % 360;
+  }
+
+  var now = new Date();
+  // 黄経0-30°→戌、30-60°→酉 …（中気で切り替わる月将）
+  var GESSHO_ORDER = [10,9,8,7,6,5,4,3,2,1,0,11];
+  var gessho = GESSHO_ORDER[Math.floor(solarLongitude(now)/30)];
+
+  var jishi = Math.floor(((now.getHours() + 1) % 24) / 2);
+  var offset = ((gessho - jishi) % 12 + 12) % 12;
+
+  var stamp = document.getElementById("nowStamp");
+  var hh = String(now.getHours()).padStart(2,"0");
+  var mm = String(now.getMinutes()).padStart(2,"0");
+  stamp.textContent = hh + "時" + mm + "分";
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce){
+    turn.style.transform = "rotate(" + (offset*30) + "deg)";
+  }else{
+    turn.style.transform = "rotate(" + (offset*30 - 1080) + "deg)";
+    requestAnimationFrame(function(){
+      setTimeout(function(){
+        turn.style.transform = "rotate(" + (offset*30) + "deg)";
+      }, 260);
+    });
+  }
+
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
