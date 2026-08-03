@@ -35,12 +35,25 @@ body{
 }
 .wrap{max-width:620px;margin:0 auto;padding:0 26px}
 
+
+/* ---------- 星 ---------- */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#stars i{
+  position:absolute;border-radius:50%;display:block;
+  animation:tw linear infinite;will-change:opacity;
+}
+@keyframes tw{
+  0%,100%{opacity:var(--o0)}
+  50%    {opacity:var(--o1)}
+}
+header,section,footer,.rule{position:relative;z-index:1}
+
 /* ---------- hero ---------- */
 .hero{
   position:relative;
   padding:64px 0 76px;
   background:
-    radial-gradient(120% 70% at 50% 0%, var(--night-2) 0%, var(--night) 45%, var(--ink) 100%);
+    radial-gradient(120% 70% at 50% 0%, rgba(19,37,64,.82) 0%, rgba(13,27,46,.62) 45%, rgba(7,14,26,.25) 100%);
   overflow:hidden;
 }
 .hero::after{
@@ -58,7 +71,7 @@ body{
 .shikiban{width:262px;height:262px;margin:0 auto 34px;display:block}
 .ring-fixed text{font-family:var(--mincho);font-size:13px;fill:var(--paper-dim)}
 .ring-turn text{font-family:var(--mincho);font-size:15px;fill:var(--gold);font-weight:600}
-.ring-turn{transform-origin:130px 130px;transition:transform 2600ms cubic-bezier(.16,.9,.2,1)}
+
 .disc-edge{fill:none;stroke:var(--gold-dim);stroke-width:.6;opacity:.55}
 .disc-inner{fill:rgba(19,37,64,.72);stroke:var(--gold-dim);stroke-width:.6}
 .moon{fill:var(--gold);opacity:.92}
@@ -165,6 +178,17 @@ p+p{margin-top:1.4em}
 .plan ul{list-style:none;margin-top:20px;border-top:1px solid rgba(212,175,106,.18);padding-top:18px}
 .plan li{padding:8px 0 8px 20px;position:relative;font-size:14.5px;line-height:1.9}
 .plan li::before{content:"◦";position:absolute;left:2px;color:var(--gold)}
+.plan li.gift{
+  margin-top:10px;padding-top:14px;
+  border-top:1px dashed rgba(232,165,184,.35);
+  color:var(--paper);
+}
+.plan li.gift::before{content:"◆";color:var(--sakura)}
+.plan li.gift em{
+  display:block;font-style:normal;font-family:var(--gothic);
+  font-size:11px;letter-spacing:.24em;color:var(--sakura);
+  margin-bottom:4px;text-indent:.24em;
+}
 .plan .note{margin-top:16px;font-size:12.5px;color:var(--paper-dim);line-height:1.9}
 
 /* ---------- steps ---------- */
@@ -205,7 +229,7 @@ p+p{margin-top:1.4em}
 
 /* ---------- cta ---------- */
 .cta{
-  background:radial-gradient(120% 90% at 50% 100%, var(--night-2), var(--ink) 70%);
+  background:radial-gradient(120% 90% at 50% 100%, rgba(19,37,64,.8), rgba(7,14,26,.3) 70%);
   padding:72px 0 84px;border-top:1px solid rgba(212,175,106,.28);
 }
 .btn{
@@ -261,6 +285,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
 </style>
 </head>
 <body>
+
+<div id="stars" aria-hidden="true"></div>
 
 <header class="hero">
   <svg class="petal" width="150" height="150" viewBox="0 0 24 24" style="top:6%;left:-30px">
@@ -419,6 +445,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
         <li>鑑定文 約4,000文字</li>
         <li>お手当ては十ほどお渡しします</li>
         <li>お読みになったあとの追加のご質問を、一度おうかがいします（一週間以内）</li>
+        <li class="gift"><em>特典</em>あなたのために選んだお守り画像を、一枚お送りいたします。スマートフォンの待受にしてお使いください。</li>
       </ul>
       <p class="note">深くお知りになりたい方、読んだあとに必ず聞きたいことが出てくる方に。</p>
     </div>
@@ -557,16 +584,54 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
   var mm = String(now.getMinutes()).padStart(2,"0");
   stamp.textContent = hh + "時" + mm + "分";
 
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduce){
-    turn.style.transform = "rotate(" + (offset*30) + "deg)";
+  var target = offset * 30;
+  function setAngle(a){
+    turn.setAttribute("transform","rotate(" + a.toFixed(2) + " " + CX + " " + CY + ")");
+  }
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce || !window.requestAnimationFrame){
+    setAngle(target);
   }else{
-    turn.style.transform = "rotate(" + (offset*30 - 1080) + "deg)";
-    requestAnimationFrame(function(){
-      setTimeout(function(){
-        turn.style.transform = "rotate(" + (offset*30) + "deg)";
-      }, 260);
-    });
+    var from = target - 1080, dur = 2800, t0 = null;
+    setAngle(from);
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 5);
+      setAngle(from + (target - from) * e);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    setTimeout(function(){ requestAnimationFrame(step); }, 300);
+  }
+
+  // 星をまく
+  var sky = document.getElementById("stars");
+  if(sky){
+    var tint = ["#ffffff","#ffffff","#ffffff","#f6e3bd","#d4af6a","#e8a5b8"];
+    var frag = document.createDocumentFragment();
+    for(var n=0;n<86;n++){
+      var st = document.createElement("i");
+      var sz = (Math.random()*1.6 + 0.9).toFixed(2);
+      var o0 = (Math.random()*0.14 + 0.04).toFixed(2);
+      var o1 = (Math.random()*0.45 + 0.35).toFixed(2);
+      st.style.cssText =
+        "left:"   + (Math.random()*100).toFixed(2) + "%;" +
+        "top:"    + (Math.random()*100).toFixed(2) + "%;" +
+        "width:"  + sz + "px;height:" + sz + "px;" +
+        "background:" + tint[(Math.random()*tint.length)|0] + ";" +
+        "animation-duration:" + (Math.random()*4.5 + 2.4).toFixed(2) + "s;" +
+        "animation-delay:-"   + (Math.random()*6).toFixed(2) + "s;" +
+        "--o0:" + o0 + ";--o1:" + o1 + ";";
+      if(sz > 2.1) st.style.boxShadow = "0 0 4px rgba(255,255,255,.55)";
+      frag.appendChild(st);
+    }
+    sky.appendChild(frag);
+    if(reduce){
+      sky.querySelectorAll("i").forEach(function(el){
+        el.style.animation = "none"; el.style.opacity = ".3";
+      });
+    }
   }
 
   var io = new IntersectionObserver(function(es){
