@@ -37,15 +37,20 @@ body{
 
 
 /* ---------- 星 ---------- */
-#stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#stars{position:fixed;top:0;right:0;bottom:0;left:0;z-index:0;pointer-events:none;overflow:hidden}
 #stars i{
   position:absolute;border-radius:50%;display:block;
-  animation:tw linear infinite;will-change:opacity;
+  opacity:.4;animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
 }
-@keyframes tw{
-  0%,100%{opacity:var(--o0)}
-  50%    {opacity:var(--o1)}
-}
+#stars i.t1{animation-name:tw1}
+#stars i.t2{animation-name:tw2}
+#stars i.t3{animation-name:tw3}
+#stars i.t4{animation-name:tw4}
+@keyframes tw1{0%,100%{opacity:.08}50%{opacity:.58}}
+@keyframes tw2{0%,100%{opacity:.16}50%{opacity:.85}}
+@keyframes tw3{0%,100%{opacity:.05}50%{opacity:.40}}
+@keyframes tw4{0%,100%{opacity:.22}50%{opacity:.70}}
 header,section,footer,.rule{position:relative;z-index:1}
 
 /* ---------- hero ---------- */
@@ -123,7 +128,7 @@ p+p{margin-top:1.4em}
   filter:brightness(.8) saturate(.88) contrast(1.03);
 }
 .scene::after{
-  content:"";position:absolute;inset:-1px;pointer-events:none;
+  content:"";position:absolute;top:-1px;right:-1px;bottom:-1px;left:-1px;pointer-events:none;
   background:linear-gradient(to bottom,
     var(--ink) 0%, rgba(7,14,26,0) 22%,
     rgba(7,14,26,0) 78%, var(--ink) 100%);
@@ -137,7 +142,7 @@ p+p{margin-top:1.4em}
   padding:7px;background:rgba(19,37,64,.5);
 }
 .shot .frame::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
+  content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;
   box-shadow:inset 0 0 42px rgba(7,14,26,.55);
 }
 .shot img{
@@ -516,11 +521,6 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
       別のお悩みは、あらためて立て直すことになります。
     </p>
 
-    <p class="center" style="font-size:13.5px;color:var(--paper-dim);margin-top:24px">
-      お生まれの日と時刻が分かる方には、<br>
-      紫微斗数と合わせた鑑定もご用意しております。<br>
-      鑑定の中でご案内いたします。
-    </p>
   </div>
 </section>
 
@@ -676,23 +676,21 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
     for(var n=0;n<86;n++){
       var st = document.createElement("i");
       var sz = (Math.random()*1.6 + 0.9).toFixed(2);
-      var o0 = (Math.random()*0.14 + 0.04).toFixed(2);
-      var o1 = (Math.random()*0.45 + 0.35).toFixed(2);
+      st.className = "t" + (1 + ((Math.random()*4)|0));
       st.style.cssText =
         "left:"   + (Math.random()*100).toFixed(2) + "%;" +
         "top:"    + (Math.random()*100).toFixed(2) + "%;" +
         "width:"  + sz + "px;height:" + sz + "px;" +
         "background:" + tint[(Math.random()*tint.length)|0] + ";" +
         "animation-duration:" + (Math.random()*4.5 + 2.4).toFixed(2) + "s;" +
-        "animation-delay:-"   + (Math.random()*6).toFixed(2) + "s;" +
-        "--o0:" + o0 + ";--o1:" + o1 + ";";
+        "animation-delay:-"   + (Math.random()*6).toFixed(2) + "s;";
       if(sz > 2.1) st.style.boxShadow = "0 0 4px rgba(255,255,255,.55)";
       frag.appendChild(st);
     }
     sky.appendChild(frag);
     if(reduce){
       sky.querySelectorAll("i").forEach(function(el){
-        el.style.animation = "none"; el.style.opacity = ".3";
+        el.style.animation = "none"; el.style.opacity = ".5";
       });
     }
   }
