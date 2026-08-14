@@ -283,8 +283,13 @@ p+p{margin-top:1.4em}
 }
 .btn:hover,.btn:focus-visible{transform:translateY(-2px);
   box-shadow:0 14px 38px rgba(212,175,106,.26)}
+.btn-main{display:block;white-space:nowrap;
+  font-size:clamp(17px,4.9vw,20px);font-weight:800;letter-spacing:.1em}
 .btn small{display:block;font-family:var(--gothic);font-size:11.5px;
-  font-weight:500;letter-spacing:.14em;margin-top:7px;opacity:.72}
+  font-weight:500;letter-spacing:.14em;margin-top:9px;line-height:1.95;
+  color:rgba(11,21,36,.74)}
+.btn .keyword{font-family:var(--mincho);font-size:1.5em;font-weight:800;
+  letter-spacing:.08em;color:#0b1524}
 .cta .after{margin-top:22px;text-align:center;font-size:13px;color:var(--paper-dim);line-height:2}
 
 footer{padding:36px 0 46px;text-align:center;font-size:11.5px;
@@ -575,8 +580,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
       盤の上では、ひとつの形をしています。
     </p>
     <a class="btn" href="https://lin.ee/9a3ryHp">
-      LINEに戻ってお申し込み
-      <small>「宵桜」または「夜半の桜」とお送りください</small>
+      <span class="btn-main">LINEからお申し込み</span>
+      <small>「<b class="keyword">宵桜</b>」または「<b class="keyword">夜半の桜</b>」<br>とお送りください</small>
     </a>
     <p class="after">
       二十四時間かぎりのお値段は、このご案内が届いた時刻からとなります。<br>
