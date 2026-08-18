@@ -276,15 +276,19 @@ p+p{margin-top:1.4em}
   display:block;max-width:400px;margin:26px auto 0;
   background:linear-gradient(135deg,#e0bd7c,#c19a4f);
   color:#0b1524;text-decoration:none;
-  font-family:var(--mincho);font-weight:800;font-size:18px;letter-spacing:.1em;
-  text-align:center;padding:21px 18px;border-radius:2px;
+  font-family:var(--mincho);font-weight:800;letter-spacing:.1em;
+  font-size:clamp(15px,4.4vw,18px);
+  text-align:center;padding:21px 14px;border-radius:2px;
+  white-space:nowrap;
   box-shadow:0 10px 30px rgba(212,175,106,.16);
   transition:transform .2s, box-shadow .2s;
 }
 .btn:hover,.btn:focus-visible{transform:translateY(-2px);
   box-shadow:0 14px 38px rgba(212,175,106,.26)}
-.btn small{display:block;font-family:var(--gothic);font-size:11.5px;
-  font-weight:500;letter-spacing:.14em;margin-top:7px;opacity:.72}
+.btn small{display:block;font-family:var(--gothic);
+  font-size:clamp(10px,3vw,11.5px);
+  font-weight:500;letter-spacing:.1em;margin-top:7px;opacity:.72;
+  white-space:nowrap}
 .cta .after{margin-top:22px;text-align:center;font-size:13px;color:var(--paper-dim);line-height:2}
 
 footer{padding:36px 0 46px;text-align:center;font-size:11.5px;
@@ -575,7 +579,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
       盤の上では、ひとつの形をしています。
     </p>
     <a class="btn" href="https://lin.ee/9a3ryHp">
-      LINEに戻ってお申し込み
+      LINEに戻って申し込む
       <small>「宵桜」または「夜半の桜」とお送りください</small>
     </a>
     <p class="after">
