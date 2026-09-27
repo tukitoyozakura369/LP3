@@ -2,7 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
+<meta name="theme-color" content="#070e1a">
 <title>陰陽師の占い 六壬神課｜月と夜桜🌙</title>
 <meta name="description" content="その恋が動くのはいつか。あの人の気持ちと、ことが動く時期を読む、陰陽師の占いです。復縁・音信不通・あの人の本音、お仕事や人との揉めごとも。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
+  color-scheme:dark only;
   --ink:#070e1a;
   --night:#0d1b2e;
   --night-2:#132540;
@@ -22,7 +26,7 @@
   --gothic:"Zen Kaku Gothic New",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:#070e1a;color-scheme:dark only}
 body{
   background:var(--ink);
   color:var(--paper);
@@ -32,6 +36,8 @@ body{
   font-size:15.5px;
   letter-spacing:.035em;
   overflow-x:hidden;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
 }
 .wrap{max-width:620px;margin:0 auto;padding:0 26px}
 
@@ -83,15 +89,16 @@ header,section,footer,.rule{position:relative;z-index:1}
 .spoke{stroke:var(--gold-dim);stroke-width:.4;opacity:.3}
 
 .stamp{
-  text-align:center;font-family:var(--mincho);font-size:12.5px;
-  color:var(--gold-dim);letter-spacing:.16em;margin-bottom:30px;
+  text-align:center;font-family:var(--mincho);
+  font-size:clamp(11px,3.2vw,12.5px);
+  color:var(--gold-dim);letter-spacing:.1em;margin-bottom:30px;
 }
 .stamp b{color:var(--gold);font-weight:600}
 
 h1{
   font-family:var(--mincho);font-weight:800;
-  font-size:clamp(29px,8.4vw,38px);line-height:1.62;
-  text-align:center;letter-spacing:.05em;
+  font-size:clamp(25px,7.4vw,38px);line-height:1.66;
+  text-align:center;letter-spacing:.03em;
 }
 h1 .thin{display:block;font-size:.56em;font-weight:400;color:var(--gold);
   letter-spacing:.2em;margin-bottom:16px}
@@ -109,8 +116,9 @@ h1 .thin rt{
 section{padding:66px 0}
 .alt{background:linear-gradient(180deg,rgba(19,37,64,.5),rgba(19,37,64,.16))}
 h2{
-  font-family:var(--mincho);font-weight:600;font-size:22px;line-height:1.75;
-  letter-spacing:.06em;margin-bottom:30px;text-align:center;
+  font-family:var(--mincho);font-weight:600;
+  font-size:clamp(19px,5.6vw,22px);line-height:1.8;
+  letter-spacing:.04em;margin-bottom:30px;text-align:center;
 }
 h2 .eyebrow{
   display:block;font-family:var(--gothic);font-size:11px;font-weight:500;
@@ -174,8 +182,9 @@ p+p{margin-top:1.4em}
 
 /* ---------- pull ---------- */
 .pull{
-  font-family:var(--mincho);font-size:20px;line-height:2;text-align:center;
-  color:var(--gold);letter-spacing:.06em;margin:8px 0;
+  font-family:var(--mincho);font-size:clamp(17px,5vw,20px);
+  line-height:2.05;text-align:center;
+  color:var(--gold);letter-spacing:.04em;margin:8px 0;
 }
 
 /* ---------- know list ---------- */
@@ -311,8 +320,8 @@ footer{padding:36px 0 46px;text-align:center;font-size:11.5px;
 .offer-icon{font-size:34px;line-height:1;margin-bottom:14px}
 .offer-title{
   font-family:var(--mincho);
-  font-size:25px;font-weight:600;line-height:1.75;
-  letter-spacing:.06em;
+  font-size:clamp(20px,5.9vw,25px);font-weight:600;line-height:1.8;
+  letter-spacing:.04em;
   color:var(--gold);
   margin:0 0 20px;
 }
@@ -331,18 +340,18 @@ footer{padding:36px 0 46px;text-align:center;font-size:11.5px;
 }
 .lp-row{
   display:flex;align-items:center;justify-content:space-between;
-  padding:20px 6px;border-bottom:1px solid rgba(232,165,184,.25);
-  gap:14px;
+  padding:20px 2px;border-bottom:1px solid rgba(232,165,184,.25);
+  gap:8px;flex-wrap:nowrap;
 }
 .lp-name{
-  font-family:var(--mincho);font-size:19px;letter-spacing:.08em;
-  color:var(--paper);white-space:nowrap;
+  font-family:var(--mincho);font-size:clamp(16px,4.4vw,19px);
+  letter-spacing:.04em;color:var(--paper);white-space:nowrap;flex:0 0 auto;
 }
 .lp-price{white-space:nowrap;text-align:right}
-.lp-price s{font-size:13px;color:var(--paper-dim);opacity:.7;margin-right:6px}
+.lp-price s{font-size:clamp(11px,3vw,13px);color:var(--paper-dim);opacity:.7;margin-right:4px}
 .lp-price b{
-  font-family:var(--mincho);font-size:25px;font-weight:600;
-  color:var(--sakura);letter-spacing:.02em;
+  font-family:var(--mincho);font-size:clamp(19px,5.6vw,25px);font-weight:600;
+  color:var(--sakura);letter-spacing:0;
 }
 
 .limited{
@@ -489,7 +498,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
     <h2><span class="eyebrow">お伝えできること</span>この占いで、<br>視えるもの</h2>
     <ul class="know">
       <li><b>あの人の、今の気持ち</b>あなたのことをどう思っているか。今、何に心がむいているのか。</li>
-      <li><b>ことが動くとしたら、いつ頃か</b>連絡が来るのはいつか。話がまとまるのはいつか。六壬は時期がはっきり出る占いですので、何月頃かまでお伝えします。</li>
+      <li><b>ことが動くとしたら、いつ頃か</b>連絡が来るのはいつか。話がまとまるのはいつか。六壬は時期がはっきり出る占いです。何月頃かまでお伝えします。</li>
       <li><b>進むべきか、やめるべきか</b>受けるか断るか。続けるか離れるか。決めかねていることが、この先どうなるかを読みます。</li>
       <li><b>今は動く時か、待つ時か</b>同じ「待つ」でも、待てば近づく時と、待つほど遠くなる時があります。</li>
       <li><b>あなたの周りに、力になる人がいるか</b>誰を頼るとよいか、誰に任せない方がよいか。</li>
@@ -658,7 +667,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offs
       </h2>
       <p class="offer-lead">
         このご案内をお受け取りになってから<br>
-        24時間以内にお決めいただいた方限定で、<br>
+        24時間以内にお決めいただいた方へ。<br>
         特別優遇価格をご用意しました。
       </p>
 
